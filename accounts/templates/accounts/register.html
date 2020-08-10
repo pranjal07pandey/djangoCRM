@@ -1,0 +1,37 @@
+{% extends 'accounts/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<br>
+
+<style>
+    .asteriskField{
+        display: none;
+    }
+</style>
+
+<div class="row justify-content-center">
+		
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <h2>Register</h2>
+                <form action="" method="post">
+                    {% csrf_token %}
+
+                    {{form|crispy}}
+                    
+                    
+                    <div class="from-group">
+                    <input type="submit" class="btn btn-primary" value="Register">
+
+                    </div>
+
+                    <small>Already a member? <a href="{% url 'login' %}">Login instead</a></small>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'accounts/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<br>
+    <div class="container">
+
+        <h1 align="center">New Order</h1>
+
+            <form action="" method="post" class="uniForm">
+                {% csrf_token %}
+
+                {{form|crispy}}
+                
+<br>
+                <input type="submit" value="Place Order" class="btn btn-success">
+
+            </form>
+
+</div>
+
+{% endblock %}
